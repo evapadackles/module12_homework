@@ -1,20 +1,20 @@
   
-function electricalDevices() {
+function ElectricalDevices() { // Т.к. это конструктор объекта, это как раз один из тех случаев, где camelCase использовать не нужно :)
 	this.enabled = false;
 	this.powerConsum;
 }
 
-electricalDevices.prototype.plugin = function () {
+ ElectricalDevices.prototype.plugin = function () {
 	this.enabled = true;
 	console.log("Устройство включено");
 };
 
-electricalDevices.prototype.unplug = function () {
+ ElectricalDevices.prototype.unplug = function () {
 	this.enabled = false;
 	console.log("Устройство выключено");
 };
 
-function phone(power) {
+function Phone(power) {
 	this.powerConsum = power;
 	this.hibernation = 75;
 
@@ -31,7 +31,7 @@ function phone(power) {
 	}
 }
 
-function printer(power) {
+function Printer(power) {
 	this.powerConsum = power;
 	this.canvasSize = 55;
 
@@ -48,13 +48,13 @@ function printer(power) {
 	}
 }
 
-phone.prototype = printer.prototype = new electricalDevices();
+Phone.prototype = Printer.prototype = new ElectricalDevices();
 
-const addPhone = new phone(300);
+const addPhone = new Phone(300);
 addPhone.reduceHibernation();
 addPhone.unplug();
 
-const addPrinter = new printer(550);
+const addPrinter = new Printer(550);
 addPrinter.plugin();
 addPrinter.addCanvasSize();
 

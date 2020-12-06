@@ -7,8 +7,8 @@ const obj = {
 
 const testKey = "key2";
 
-const CountKey = (strIn, objIn) => {
+const countKey = (strIn, objIn) => { // не забывайте про правила именования переменных и функций: имена должны быть в camelCase, кроме имен классов и конструкторов
 return (strIn in objIn);
 }
 
-console.log(CountKey(testKey, obj))
+console.log(countKey(testKey, obj))

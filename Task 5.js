@@ -1,4 +1,4 @@
-class electricalDevices {
+class ElectricalDevices {
 	constructor(power) {
 		this.enabled = false;
 		this.powerConsum = power;
@@ -15,7 +15,7 @@ class electricalDevices {
 	};
 }
 
-class phone extends electricalDevices {
+class Phone extends ElectricalDevices {
 	constructor(power) {
 		super(power);
 		this.hibernation = 75;
@@ -35,7 +35,7 @@ class phone extends electricalDevices {
 	}
 }
 
-class printer extends electricalDevices {
+class Printer extends ElectricalDevices {
 	constructor(power) {
 		super(power);
 		this.canvasSize = 55;
@@ -54,11 +54,11 @@ class printer extends electricalDevices {
 	}
 }
 
-const addPhone = new phone(300);
+const addPhone = new Phone(300);
 addPhone.reduceHibernation();
 addPhone.unplug();
 
-const addPrinter = new printer(550);
+const addPrinter = new Printer(550);
 addPrinter.plugin();
 addPrinter.addCanvasSize();
 
